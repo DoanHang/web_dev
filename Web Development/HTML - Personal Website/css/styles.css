@@ -1,0 +1,37 @@
+body {
+  background-color: #EAF6F6;
+}
+
+h1 {
+  color: #66BFBF
+}
+
+h3{
+  color: green;
+}
+
+hr {
+  border-style: dotted none none;
+  border-color: grey;
+  border-width: 5px;
+  width: 50%;
+}
+
+img:hover {
+  background-color: gold;
+}
+
+/* Tag Selector */
+
+.profile_image {
+  background-color: green;
+}
+
+.circular {
+  border-radius: 15%;
+}
+
+/* ID Selector */
+#heading {
+  color: blue;
+}
