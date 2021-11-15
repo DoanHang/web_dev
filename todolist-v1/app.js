@@ -1,9 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const date = require(__dirname + "/date.js")
 const app = express();
 
-var items = [];
+let items = [];
 
 app.set("view engine", "ejs");
 
@@ -12,21 +12,13 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res){
 
-    var today = new Date();
-
-    var options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-
-    var day = today.toLocaleDateString("en-us", options);
+    let day = date.getDay();
 
     res.render("list", {kindOfDay: day, newListItems: items});
 });
 
 app.post("/", function(req, res){
-    var item = req.body.newItem;
+    let item = req.body.newItem;
 
     items.push(item);
 
@@ -35,6 +27,6 @@ app.post("/", function(req, res){
     console.log(item);
 })
 
-app.listen(3111, function(){
-    console.log("Server has started on port 3111");
+app.listen(3112, function(){
+    console.log("Server has started on port 3112");
 });
